@@ -1,6 +1,9 @@
 name: Build/release
 
-on: push
+on:
+  push:
+    branches:
+      - release
 
 jobs:
   release:
@@ -8,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest]
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
